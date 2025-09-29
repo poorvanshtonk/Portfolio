@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poorvansh Tonk – Portfolio</title>
+    <style>
+        body
+        {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;               /* Center text and image */
+            background-color:#e8f0f5;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-img {
+            margin-top: 30px;
+            border-radius: 15px;              /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #0077b5;                    /* LinkedIn blue */
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ff6600;                    /* Change color on hover */
+        }
+        hr {
+            color: pink;
+            width: 60%;
+            margin: 30px auto;
+        }
+        button {
+            padding: 10px 20px;
+            background: #0077b5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #005a87;
+        }
+        section {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="image.png" alt="Poorvansh Tonk" height="300" width="250" class="profile-img">
+
+    <marqee><h1 style = " color:#0a192f;">Poorvansh Tonk</h1>
+    <p><strong>Current Role:</strong> Student @ Newton School of Technology</p>
+
+    <p>
+        <a href="https://www.linkedin.com/in/poorvansh-tonk-7170b8366/" target="_blank">LinkedIn</a>
+        |
+        <a href="https://github.com/poorvanshtonk" target="_blank">GitHub</a>
+    </p>
+
+    <button onclick="greet()">Say Hello 👋</button>
+
+    <hr>
+
+    <section>
+        <h1 style=" 
+            font-size: 50px;
+            font-family: DynaPuff, system-ui;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-variation-settings: wdth 100;">Experience</h1>
+
+        <h2>Experience 1 – Current</h2>
+        <p>Currently working at Apple California as a Senior Software Developer.</p>
+
+        <h2>Experience 2 – Contributions</h2>
+        <p>Contributed  building the Apple Silicon chip and designed the structure for the iPhone 14 Pro.</p>
+    </section>
+
+    <script>
+        function greet() {
+            alert("Welcome to Poorvansh Tonk's Portfolio!");
+        }
+    </script>
+
+</body>
+</html>
