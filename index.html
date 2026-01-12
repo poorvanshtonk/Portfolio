@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poorvansh Tonk | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">My Logo</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn-primary small">Hire Me</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <p class="tagline">👋 Hey, I’m</p>
+      <h1>Poorvansh Tonk</h1>
+      <p class="subtitle">
+        A <span class="highlight">Web Developer</span> who loves building clean, modern, and responsive websites.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Let’s Talk</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-circle"></div>
+      <div class="hero-inner">
+        <h2>Front-End / Back-End</h2>
+        <p>HTML • CSS • JavaScript • Node.js</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          I'm a passionate developer who enjoys turning ideas into real, working products.
+          I focus on building fast, responsive, and user-friendly experiences.
+        </p>
+        <p>
+          When I’m not coding, I love learning new tech, exploring tools like AI,
+          and experimenting with side projects.
+        </p>
+      </div>
+      <div class="about-cards">
+        <div class="info-card">
+          <h3>Skills</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Node.js, Express</li>
+            <li>MySQL / PostgreSQL</li>
+            <li>Git, GitHub</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>What I Do</h3>
+          <ul>
+            <li>Landing pages</li>
+            <li>Portfolio websites</li>
+            <li>E-commerce prototypes</li>
+            <li>Custom web apps</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects section">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Upcoming</p>
+        <p class="tech">Tech:PQR</p>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Upcoming</p>
+        <p class="tech">Tech: ABC</p>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Upcoming</p>
+        <p class="tech">Tech: XYZ</p>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact section">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-text">
+      Want to work together or have a question? Drop a message below 👇
+    </p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Poorvansh Tonk. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple form handler (front-end only)
+    function handleSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById("form-status");
+      status.textContent = "Thanks! Your message has been recorded (demo only).";
+    }
+  </script>
+</body>
+</html>
