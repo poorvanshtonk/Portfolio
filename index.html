@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poorvansh Tonk | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -12,7 +12,9 @@
 <body>
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">My Logo</div>
+    <div class="logo">
+      <h2>Portfolio</h2>
+    </div>
     <nav>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
@@ -30,38 +32,47 @@
       <p class="tagline">👋 Hey, I’m</p>
       <h1>Poorvansh Tonk</h1>
       <p class="subtitle">
-        A <span class="highlight">Web Developer</span> who loves building clean, modern, and responsive websites.
+        A <span class="highlight">Growth-Driven</span> developer exploring full-stack systems, contributing to open source, diving into cybersecurity, and building impactful ideas with leadership at the core.
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-ghost">Let’s Talk</a>
       </div>
+      <div class="social-links">
+        <a class="social-link github" href="https://github.com/poorvanshtonk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="assets/images/Github.jpeg" alt="GitHub" />
+        </a>
+        <a class="social-link linkedin" href="https://www.linkedin.com/in/poorvansh-tonk-7170b8366/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="assets/images/Linkedin.jpeg" alt="LinkedIn" />
+        </a>
+      </div>
     </div>
     <div class="hero-card">
       <div class="hero-circle"></div>
       <div class="hero-inner">
-        <h2>Front-End / Back-End</h2>
-        <p>HTML • CSS • JavaScript • Node.js</p>
+        <!-- <h2>Front-End / Back-End</h2>
+        <p>HTML • CSS • JavaScript • Node.js</p> -->
+        <img class="hero-photo" src="assets/images/photo.jpeg" alt="Poorvansh Tonk" />
       </div>
     </div>
   </section>
 
   <!-- ABOUT SECTION -->
   <section id="about" class="about section">
-    <h2 class="section-title">About Me</h2>
+    <h2 class="section-title hidden">About Me</h2>
     <div class="about-grid">
-      <div>
+      <div class="hidden">
         <p>
-          I'm a passionate developer who enjoys turning ideas into real, working products.
-          I focus on building fast, responsive, and user-friendly experiences.
+          I’m a growth-driven developer and aspiring entrepreneur who enjoys turning ideas into real, working products. While I continue strengthening my full-stack skills, I focus on understanding systems deeply — from backend logic to user experience — rather than just writing code.
         </p>
         <p>
-          When I’m not coding, I love learning new tech, exploring tools like AI,
-          and experimenting with side projects.
+          Beyond development, I actively explore open source, cybersecurity, and AI to expand my technical perspective. I believe in building solutions that are not only functional but scalable and impactful.
         </p>
+        <p>
+          With an entrepreneurial mindset and leadership experience, I enjoy taking initiative, leading teams, and transforming concepts into meaningful digital products. My goal is to combine technology, innovation, and vision to create real-world impact.        </p>
       </div>
       <div class="about-cards">
-        <div class="info-card">
+        <div class="info-card hidden delay-100">
           <h3>Skills</h3>
           <ul>
             <li>HTML, CSS, JavaScript</li>
@@ -70,7 +81,7 @@
             <li>Git, GitHub</li>
           </ul>
         </div>
-        <div class="info-card">
+        <div class="info-card hidden delay-200">
           <h3>What I Do</h3>
           <ul>
             <li>Landing pages</li>
@@ -85,21 +96,21 @@
 
   <!-- PROJECTS SECTION -->
   <section id="projects" class="projects section">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title hidden">Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card hidden delay-100">
         <h3>Project One</h3>
         <p>Upcoming</p>
         <p class="tech">Tech:PQR</p>
         <a href="#" class="project-link">View Project →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card hidden delay-200">
         <h3>Project Two</h3>
         <p>Upcoming</p>
         <p class="tech">Tech: ABC</p>
         <a href="#" class="project-link">View Project →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card hidden delay-300">
         <h3>Project Three</h3>
         <p>Upcoming</p>
         <p class="tech">Tech: XYZ</p>
@@ -110,11 +121,11 @@
 
   <!-- CONTACT SECTION -->
   <section id="contact" class="contact section">
-    <h2 class="section-title">Contact</h2>
-    <p class="contact-text">
+    <h2 class="section-title hidden">Contact</h2>
+    <p class="contact-text hidden delay-100">
       Want to work together or have a question? Drop a message below 👇
     </p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form hidden delay-200" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
@@ -141,5 +152,6 @@
       status.textContent = "Thanks! Your message has been recorded (demo only).";
     }
   </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
