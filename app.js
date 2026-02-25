@@ -58,52 +58,42 @@
 //     console.log(`Server is running on http://localhost:${PORT}`);
 //     console.log(`Server is running on network: 10.7.17.46:${PORT}`);
 // });
-const http = require("http");
-const fs = require("fs");
+
+
+
+const express = require("express");
 const path = require("path");
 
-const server = http.createServer((req, res) => {
-    console.log(req.method, req.url);
+const app = express();
 
-    let filePath;
 
-    // Default route
-    if (req.url === "/" || req.url === "/index.html") {
-        filePath = path.join(__dirname, "index.html");
-    } else {
-        filePath = path.join(__dirname, req.url);
-    }
 
-    // Get file extension
-    const ext = path.extname(filePath);
 
-    // Content type mapping
-    const contentTypeMap = {
-        ".html": "text/html",
-        ".css": "text/css",
-        ".js": "application/javascript",
-        ".jpg": "image/jpeg",
-        ".jpeg": "image/jpeg",
-        ".png": "image/png",
-        ".svg": "image/svg+xml",
-    };
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+// Serve static assets from the Public directory
+app.use(express.static(path.join(__dirname, "Public")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-    const contentType = contentTypeMap[ext] || "application/octet-stream";
+// ------------------------------
+// ROUTES
+// ------------------------------
 
-    fs.readFile(filePath, (err, data) => {
-        if (err) {
-            res.writeHead(404, { "Content-Type": "text/plain" });
-            res.end("404 Page Not Found");
-        } else {
-            res.writeHead(200, { "Content-Type": contentType });
-            res.end(data);
-        }
-    });
+app.get("/", (req, res) => {
+    res.render("index");
 });
 
-const PORT = 8001;
+app.use((req, res) => {
+    res.status(404).render("404");
+});
 
-server.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-    console.log(`Server is running on network: 10.7.17.46:${PORT}`)
+// ------------------------------
+// SERVER
+// ------------------------------
+
+const PORT = process.env.PORT || 8001;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

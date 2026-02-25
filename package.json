@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is my personal portfolio website where I showcase my projects, skills, and learning journey in web development.   I am actively working on this portfolio, and many things are currently added as examples. I improve and update this website day by day as I learn new technologies and build better projects.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poorvanshtonk/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/poorvanshtonk/Portfolio/issues"
+  },
+  "homepage": "https://github.com/poorvanshtonk/Portfolio#readme",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}
