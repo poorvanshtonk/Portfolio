@@ -78,11 +78,12 @@ body {
 .delay-300 { transition-delay: 300ms; }
 
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
+
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 2000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,10 +94,17 @@ body {
   animation: popIn 0.6s ease-out forwards;
 }
 
+/* Logo */
 .logo {
   font-weight: 700;
   font-size: 1.3rem;
   letter-spacing: 1px;
+  color: white;
+}
+
+/* Desktop Nav */
+.nav-menu {
+  display: flex;
 }
 
 .nav-links {
@@ -116,6 +124,62 @@ body {
   color: #ffffff;
   transform: translateY(-1px);
 }
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* ================= MOBILE ================= */
+
+/* ================= MOBILE NAV ================= */
+
+@media(max-width: 900px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide menu by default */
+  .nav-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 8, 22, 0.98);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    display: none;
+    padding: 30px 0;
+    z-index: 9999;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    display: block;
+  }
+
+  /* Make links vertical */
+  .nav-links {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 25px;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 1.1rem;
+  }
+
+}
+
+/* ================= HERO SECTION ================= */
+
 
 /* BUTTONS */
 .btn-primary,
@@ -206,7 +270,7 @@ body {
   animation-delay: 0.6s;
 }
 
-.social-links {
+/* .social-links {
   display: flex;
   gap: 0.9rem;
   margin-top: 1.1rem;
@@ -233,7 +297,6 @@ body {
   height: 46px;
   border-radius: 10px;
   object-fit: contain;
-  /* filter: grayscale(1) brightness(0.85); */
   transition: inherit;
 }
 
@@ -269,7 +332,7 @@ body {
 .social-link:focus-visible {
   outline: 2px solid rgba(59, 130, 246, 0.55);
   outline-offset: 3px;
-}
+} */
 
 /* HERO CARD */
 .hero-card {
@@ -351,7 +414,7 @@ body {
 }
 
 /* ABOUT */
-.about-grid {
+/* .about-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 2.5rem;
@@ -360,7 +423,37 @@ body {
 .about p {
   color: #9ca3af;
   margin-bottom: 0.7rem;
+} */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
 }
+
+.about-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stack-item {
+  background: #0f1a2f;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.stack-item:hover {
+  transform: translateX(6px);
+  border: 1px solid #3b82f6;
+}
+
+
+
 
 /* .about-cards {
   display: flex;
@@ -390,6 +483,85 @@ body {
   margin-bottom: 0.2rem;
 } */
 
+/* ================= CONNECT SECTION ================= */
+
+.connect {
+  padding: 100px 10%;
+}
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Text */
+.connect-left p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+/* Icons Row */
+.connect-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 24px;
+}
+
+/* Icon Style */
+.icon-link {
+  width: 46px;
+  height: 46px;
+  padding: 10px;
+  border-radius: 14px;
+  background: #0f1a2f;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.icon-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover Effect */
+.icon-link:hover {
+  transform: translateY(-6px);
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 20px rgba(59,130,246,0.25);
+  color: #3b82f6;
+}
+
+/* Resume Button Area */
+.connect-right {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+/* Larger Resume Button */
+.btn-primary.large {
+  padding: 16px 36px;
+  font-size: 1rem;
+  border-radius: 50px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .connect-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .connect-right {
+    justify-content: flex-start;
+  }
+}
 /* PROJECTS */
 .projects {
   background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 55%);
@@ -583,5 +755,3 @@ body {
   background: #3b82f6;
   color: #ffffff;
 }
-
-
