@@ -1,21 +1,56 @@
 import React from 'react';
 
 const Connect = () => {
+  const sectionStyle = {
+    padding: '100px 8%'
+  };
+
+  const titleStyle = {
+    fontSize: '1.8rem',
+    marginBottom: '1.5rem',
+    fontWeight: 'bold'
+  };
+
+  const textStyle = {
+    color: '#cbd5e1',
+    fontSize: '1.05rem',
+    lineHeight: '1.7',
+    maxWidth: '500px'
+  };
+
+  const iconContainerStyle = {
+    marginTop: '30px',
+    display: 'flex',
+    gap: '24px'
+  };
+
+  const iconLinkStyle = {
+    width: '46px',
+    height: '46px',
+    padding: '10px',
+    borderRadius: '14px',
+    background: '#0f1a2f',
+    border: '1px solid rgba(255,255,255,0.06)',
+    color: '#94a3b8',
+    transition: 'all 0.3s ease',
+    display: 'inline-block'
+  };
+
   return (
-    <section id="connect" className="connect section">
-      <h2 className="section-title hidden">Let’s Connect</h2>
+    <section id="connect" style={sectionStyle} className="container-fluid">
+      <h2 style={titleStyle} className="hidden">Let’s Connect</h2>
 
-      <div className="connect-grid">
+      <div className="row g-5 align-items-center mt-3">
 
-        <div className="connect-left hidden">
-          <p>
+        <div className="col-12 col-md-7 hidden">
+          <p style={textStyle}>
             Interested in collaborating, hiring, or discussing ideas?
             Let’s connect and build something impactful.
           </p>
 
-          <div className="connect-icons">
-            <a href="https://github.com/poorvanshtonk" target="_blank" rel="noopener noreferrer" className="icon-link">
-                <svg viewBox="0 0 24 24" fill="currentColor">
+          <div style={iconContainerStyle}>
+            <a href="https://github.com/poorvanshtonk" target="_blank" rel="noopener noreferrer" className="icon-link" style={iconLinkStyle}>
+                <svg viewBox="0 0 24 24" fill="currentColor" style={{width: '100%', height: '100%'}}>
                 <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55
                 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.27-1.7-1.27-1.7
                 -1.04-.72.08-.71.08-.71 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24
@@ -29,8 +64,8 @@ const Connect = () => {
                 23.5 5.65 18.35.5 12 .5z"/>
                 </svg>
             </a>
-            <a href="https://linkedin.com/in/poorvansh-tonk-7170b8366/" target="_blank" rel="noopener noreferrer" className="icon-link">
-                <svg viewBox="0 0 24 24" fill="currentColor">
+            <a href="https://linkedin.com/in/poorvansh-tonk-7170b8366/" target="_blank" rel="noopener noreferrer" className="icon-link" style={iconLinkStyle}>
+                <svg viewBox="0 0 24 24" fill="currentColor" style={{width: '100%', height: '100%'}}>
                 <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5
                 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5
                 0h4.78v2.2h.07c.67-1.27 2.3-2.6 4.74-2.6
@@ -39,8 +74,8 @@ const Connect = () => {
                 </svg>
             </a>
 
-            <a href="mailto:poorvanshtonk@gmail.com" className="icon-link">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+            <a href="mailto:poorvanshtonk@gmail.com" className="icon-link" style={iconLinkStyle}>
+            <svg viewBox="0 0 24 24" fill="currentColor" style={{width: '100%', height: '100%'}}>
                 <path d="M2 4h20c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2
                 c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13
                 22 6.01V6H2zm20 12V8l-10 7L2 8v10h20z"/>
@@ -49,8 +84,8 @@ const Connect = () => {
           </div>
         </div>
 
-        <div className="connect-right hidden delay-200">
-          <a href="/resume.pdf" className="btn-primary large" download>
+        <div className="col-12 col-md-5 d-flex justify-content-start justify-content-md-end hidden delay-200">
+          <a href="/resume.pdf" className="btn-primary-custom large text-center" download>
             Download Resume
           </a>
         </div>
