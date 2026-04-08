@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ProjectDetail from './pages/ProjectDetail';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -36,15 +38,24 @@ function App() {
     };
   }, []);
 
-  return (
+  const homePage = (
     <>
-      <Navbar />
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Connect />
       <Contact />
+    </>
+  );
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={homePage} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+      </Routes>
       <Footer />
     </>
   );
