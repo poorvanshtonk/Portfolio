@@ -46,11 +46,25 @@ const Connect = () => {
                 <path d="M3 5.5h18A1.5 1.5 0 0 1 22.5 7v10a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 17V7A1.5 1.5 0 0 1 3 5.5Zm0 1.8v.29l9 5.76 9-5.76V7.3H3Zm18 2.43-8.6 5.5a.75.75 0 0 1-.8 0L3 9.73V17h18V9.73Z" />
               </svg>
             </a>
+
+            <a
+              href="https://calendly.com/poorvanshtonk"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-link d-inline-flex align-items-center justify-content-center"
+              aria-label="Calendly"
+            >
+              <svg viewBox="0 0 24 24" fill="none" width="22" height="22" aria-hidden="true">
+                <rect x="3" y="4.5" width="18" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
+                <path d="M7 2.75v3.5M17 2.75v3.5M3 9.25h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                <path d="M8 13h3M8 16h5M15.5 13.25l1 .9 1.75-2.15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
 
         <div className="col-12 col-md-5 d-flex justify-content-md-end hidden delay-200">
-          <a href="/resume.pdf" className="btn-primary-custom large text-center" download>
+          <a href="/Users/poorvanshtonk/Downloads/Resume-POORVANSH TONK.pdf" className="btn-primary-custom large text-center" download>
             Download Resume
           </a>
         </div>
