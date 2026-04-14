@@ -10,20 +10,28 @@ const Contact = () => {
         Want to work together? Drop a message below 👇
       </p>
 
-      <form className="contact-form hidden" style={{ maxWidth: "600px" }}>
+      <form 
+        action="https://formsubmit.co/mr.poorvansh@gmail.com" 
+        method="POST" 
+        className="contact-form hidden" 
+        style={{ maxWidth: "600px" }}
+      >
+        {/* Hidden inputs for FormSubmit configuration */}
+        <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio" />
+        <input type="hidden" name="_captcha" value="false" />
 
         <div className="row g-3 mb-3">
           <div className="col-md-6">
-            <input type="text" placeholder="Your Name" required />
+            <input type="text" name="name" placeholder="Your Name" required />
           </div>
           <div className="col-md-6">
-            <input type="email" placeholder="Your Email" required />
+            <input type="email" name="email" placeholder="Your Email" required />
           </div>
         </div>
 
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-        <button className="btn-primary-custom">Send Message</button>
+        <button type="submit" className="btn-primary-custom mt-3">Send Message</button>
       </form>
 
     </section>

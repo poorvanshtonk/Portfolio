@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { PopupModal } from 'react-calendly';
 
 const Connect = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [rootElement, setRootElement] = useState(null);
+
+  useEffect(() => {
+    setRootElement(document.getElementById('root'));
+  }, []);
+
   return (
     <section id="connect" className="section container-fluid">
       <h2 className="section-title hidden">Let’s Connect</h2>
@@ -47,10 +55,8 @@ const Connect = () => {
               </svg>
             </a>
 
-            <a
-              href="https://calendly.com/poorvanshtonk"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => setIsCalendlyOpen(true)}
               className="icon-link d-inline-flex align-items-center justify-content-center"
               aria-label="Calendly"
             >
@@ -59,7 +65,15 @@ const Connect = () => {
                 <path d="M7 2.75v3.5M17 2.75v3.5M3 9.25h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 <path d="M8 13h3M8 16h5M15.5 13.25l1 .9 1.75-2.15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </button>
+            {isCalendlyOpen && rootElement && (
+              <PopupModal
+                url="https://calendly.com/poorvanshtonk"
+                onModalClose={() => setIsCalendlyOpen(false)}
+                open={isCalendlyOpen}
+                rootElement={rootElement}
+              />
+            )}
           </div>
         </div>
 
