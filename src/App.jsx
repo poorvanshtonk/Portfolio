@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ProjectDetail from './pages/ProjectDetail';
+import { Analytics } from "@vercel/analytics/react"; 
 import './App.css';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,23 +15,21 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Intersection Observer for scroll animations
     const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
     };
 
     const observer = new IntersectionObserver((entries, observerInstance) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observerInstance.unobserve(entry.target); // Only animate once
-            }
-        });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observerInstance.unobserve(entry.target);
+        }
+      });
     }, observerOptions);
 
-    // Wait until elements are mounted
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
 
@@ -52,11 +52,15 @@ function App() {
   return (
     <>
       <Navbar />
+      
       <Routes>
         <Route path="/" element={homePage} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
+
       <Footer />
+
+      <Analytics />
     </>
   );
 }
