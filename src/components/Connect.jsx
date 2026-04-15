@@ -78,7 +78,7 @@ const Connect = () => {
         </div>
 
         <div className="col-12 col-md-5 d-flex justify-content-md-end hidden delay-200">
-          <a href="/Users/poorvanshtonk/Downloads/Resume-POORVANSH TONK.pdf" className="btn-primary-custom large text-center" download>
+          <a href="/resume.pdf" className="btn-primary-custom large text-center" download>
             Download Resume
           </a>
         </div>
