@@ -1,8 +1,10 @@
 import React from 'react';
+import SectionArtwork from './SectionArtwork';
 
 const Hero = () => {
   return (
     <section id="hero" className="section d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+      <SectionArtwork variant="hero" className="hero-artwork" />
 
       <div className="hero-text">
         <p className="tagline">👋 Hey, I’m</p>

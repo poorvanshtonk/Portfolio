@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { PopupModal } from 'react-calendly';
+import SectionArtwork from './SectionArtwork';
 
 const Connect = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-  const [rootElement, setRootElement] = useState(null);
-
-  useEffect(() => {
-    setRootElement(document.getElementById('root'));
-  }, []);
+  const rootElement = document.getElementById('root');
 
   return (
     <section id="connect" className="section container-fluid">
+      <SectionArtwork variant="connect" />
+
       <h2 className="section-title hidden">Let’s Connect</h2>
 
       <div className="row g-5 align-items-center mt-3">

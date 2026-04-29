@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -12,27 +13,27 @@ const Navbar = () => {
       </div>
 
       {/* Logo */}
-      <div className="logo">Portfolio</div>
+      <Link className="logo" to="/#hero">Portfolio</Link>
 
       {/* Desktop Nav */}
       <nav className="d-none d-md-block">
         <ul className="nav-links d-flex">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><Link to="/#hero">Home</Link></li>
+          <li><Link to="/#about">About</Link></li>
+          <li><Link to="/#skills">Skills</Link></li>
+          <li><Link to="/#projects">Projects</Link></li>
+          <li><Link to="/#contact">Contact</Link></li>
         </ul>
       </nav>
 
       {/* Mobile Nav */}
       <nav className={`mobile-menu ${isActive ? "active" : ""}`}>
         <ul className="nav-links">
-          <li><a href="#hero" onClick={() => setIsActive(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setIsActive(false)}>About</a></li>
-          <li><a href="#skills" onClick={() => setIsActive(false)}>Skills</a></li>
-          <li><a href="#projects" onClick={() => setIsActive(false)}>Projects</a></li>
-          <li><a href="#contact" onClick={() => setIsActive(false)}>Contact</a></li>
+          <li><Link to="/#hero" onClick={() => setIsActive(false)}>Home</Link></li>
+          <li><Link to="/#about" onClick={() => setIsActive(false)}>About</Link></li>
+          <li><Link to="/#skills" onClick={() => setIsActive(false)}>Skills</Link></li>
+          <li><Link to="/#projects" onClick={() => setIsActive(false)}>Projects</Link></li>
+          <li><Link to="/#contact" onClick={() => setIsActive(false)}>Contact</Link></li>
         </ul>
       </nav>
 

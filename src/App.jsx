@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectDetail from './pages/ProjectDetail';
 import { Analytics } from "@vercel/analytics/react"; 
 import './App.css';
@@ -14,29 +14,48 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  const location = useLocation();
+
+  const [introStage, setIntroStage] = useState('center'); 
+  // center → move → done
+
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15
+    const triggerAnimation = () => {
+      if (introStage === 'center') {
+        setIntroStage('move');
+
+        setTimeout(() => {
+          setIntroStage('done');
+        }, 900);
+      }
     };
 
-    const observer = new IntersectionObserver((entries, observerInstance) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observerInstance.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
+    window.addEventListener('wheel', triggerAnimation, { passive: true });
+    window.addEventListener('touchmove', triggerAnimation, { passive: true });
+    window.addEventListener('keydown', triggerAnimation);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener('wheel', triggerAnimation);
+      window.removeEventListener('touchmove', triggerAnimation);
+      window.removeEventListener('keydown', triggerAnimation);
     };
-  }, []);
+  }, [introStage]);
+
+  /* ===== your existing observer (unchanged) ===== */
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
 
   const homePage = (
     <>
@@ -51,15 +70,24 @@ function App() {
 
   return (
     <>
+      {/* 🔥 REAL MOVING INTRO */}
+      {introStage !== 'done' && (
+        <div className={`intro ${introStage}`}>
+          <div className="intro-mark" aria-hidden="true">
+            <span className="intro-orbit"></span>
+            <h1 className="intro-text">Portfolio</h1>
+          </div>
+        </div>
+      )}
+
       <Navbar />
-      
+
       <Routes>
         <Route path="/" element={homePage} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
 
       <Footer />
-
       <Analytics />
     </>
   );

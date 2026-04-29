@@ -1,8 +1,10 @@
 import React from 'react';
+import SectionArtwork from './SectionArtwork';
 
 const Skills = () => {
   return (
     <section id="skills" className="section container-fluid">
+      <SectionArtwork variant="skills" />
 
       <h2 className="section-title hidden">Skills Summary</h2>
 
